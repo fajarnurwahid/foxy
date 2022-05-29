@@ -22,5 +22,16 @@ $(document).ready(function() {
             $('.sidebar-menu-item.has-dropdown, .sidebar-dropdown-menu-item.has-dropdown').removeClass('focused')
         })
     })
+
+    $('.sidebar-overlay').click(function() {
+        $('.sidebar').addClass('collapsed')
+
+        $('.sidebar-dropdown-menu').slideUp('fast')
+        $('.sidebar-menu-item.has-dropdown, .sidebar-dropdown-menu-item.has-dropdown').removeClass('focused')
+    })
+
+    if(window.innerWidth < 768) {
+        $('.sidebar').addClass('collapsed')
+    }
     // end: Sidebar
 })

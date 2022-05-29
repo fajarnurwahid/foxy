@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 
 
@@ -82,19 +82,59 @@ body {
 .text-indigo {
     color: var(--bs-indigo);
 }
+.bg-indigo {
+    background-color: var(--bs-indigo);
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.fw-semibold {
+    font-weight: 600;
+}
+.fs-7 {
+    font-size: .875rem;
+}
+
+
+.fx-dropdown-menu {
+    min-width: 16rem;
+    padding: 0;
+    overflow: hidden;
+}
 /* start: Global */
 
 
 
 /* start: Sidebar */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 490;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s;
+}
+.sidebar.collapsed ~ .sidebar-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
 .sidebar.collapsed:hover,
 .sidebar {
     width: 16rem;
     overflow-y: auto;
-    transition: width .2s;
+    transition: width .2s, left .2s;
+    left: 0;
+    z-index: 500;
 }
 .sidebar.collapsed {
-    width: 4.75rem;
+    left: -16rem;
 }
 .sidebar::-webkit-scrollbar {
     width: .25rem;
@@ -108,23 +148,9 @@ body {
 .sidebar::-webkit-scrollbar-thumb:hover {
     background-color: var(--bs-gray-600);
 }
-.sidebar.collapsed:hover .sidebar-logo {
-    display: block;
-}
-.sidebar.collapsed .sidebar-logo {
-    display: none;
-}
 .sidebar-toggle {
     cursor: pointer;
     transition: .2s;
-}
-.sidebar.collapsed:hover .sidebar-toggle {
-    margin-left: auto;
-    margin-right: 0;
-}
-.sidebar.collapsed .sidebar-toggle {
-    margin: 0 auto;
-    transform: rotateZ(180deg);
 }
 .sidebar-toggle:hover {
     color: var(--bs-indigo);
@@ -176,10 +202,6 @@ body {
     opacity: 1;
     visibility: visible;
 }
-.sidebar.collapsed .sidebar-menu-divider {
-    opacity: 0;
-    visibility: hidden;
-}
 .sidebar-dropdown-menu-item a {
     padding: .375rem 0;
     padding-right: .75rem;
@@ -196,3 +218,117 @@ body {
     list-style-type: circle;
 }
 /* end: Sidebar */
+
+
+
+/* start: Main */
+main {
+    padding-left: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* start: Navbar */
+nav {
+    display: flex;
+    align-items: center;
+}
+.navbar-profile-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.navbar-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25rem;
+}
+.navbar-link:hover {
+    background-color: var(--bs-gray-200);
+}
+/* end: Navbar */
+/* end: Main */
+
+
+
+/* start: Breakpoints */
+ /* X-Small devices (portrait phones, less than 576px) */
+ /* No media query for `xs` since this is the default in Bootstrap */
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* start: Sidebar */
+    .sidebar-overlay {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .sidebar.collapsed {
+        width: 4.75rem;
+        left: 0;
+    }
+    .sidebar.collapsed .sidebar-logo {
+        display: none;
+    }
+    .sidebar.collapsed:hover .sidebar-logo {
+        display: block;
+    }
+    .sidebar.collapsed:hover .sidebar-toggle {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .sidebar.collapsed .sidebar-toggle {
+        margin: 0 auto;
+        transform: rotateZ(180deg);
+    }
+    .sidebar.collapsed:hover .sidebar-menu-divider {
+        font-size: .75rem;
+        color: var(--bs-gray-600);
+        transition: opacity .2s;
+        opacity: 1;
+        visibility: visible;
+    }
+    .sidebar.collapsed .sidebar-menu-divider {
+        opacity: 0;
+        visibility: hidden;
+    }
+    /* end: Sidebar */
+
+
+
+    /* start: Main */
+    main {
+        transition: padding-left .2s;
+        padding-left: 16rem;
+    }
+    .sidebar.collapsed ~ main {
+        padding-left: 4.75rem;
+    }
+    /* end: Main */
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+ /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+ /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    
+}
+/* end: Breakpoints */
