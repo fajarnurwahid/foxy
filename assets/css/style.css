@@ -253,6 +253,63 @@ nav {
     background-color: var(--bs-gray-200);
 }
 /* end: Navbar */
+
+
+
+/* start: Suummary */
+.summary-icon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-light);
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+.summary-primary,
+.summary-indigo,
+.summary-success,
+.summary-danger {
+    transition: .2s;
+}
+.summary-primary:hover,
+.summary-indigo:hover,
+.summary-success:hover,
+.summary-danger:hover {
+    color: var(--bs-light) !important;
+}
+.summary-primary:hover .summary-icon,
+.summary-indigo:hover .summary-icon,
+.summary-success:hover .summary-icon,
+.summary-danger:hover .summary-icon {
+    background-color: var(--bs-light) !important;
+}
+.summary-primary:hover .summary-icon {
+    color: var(--bs-primary) !important;
+}
+.summary-indigo:hover .summary-icon {
+    color: var(--bs-indigo) !important;
+}
+.summary-success:hover .summary-icon {
+    color: var(--bs-success) !important;
+}
+.summary-danger:hover .summary-icon {
+    color: var(--bs-danger) !important;
+}
+.summary-primary:hover {
+    background-color: var(--bs-primary) !important;
+}
+.summary-indigo:hover {
+    background-color: var(--bs-indigo) !important;
+}
+.summary-success:hover {
+    background-color: var(--bs-success) !important;
+}
+.summary-danger:hover {
+    background-color: var(--bs-danger) !important;
+}
+/* end: Suummary */
 /* end: Main */
 
 
